@@ -1,0 +1,37 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Qazyna</title>
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    </head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="{% url 'market:market' %}"><img src="{% static 'main/img/Qazyna.png' %}" alt="Qazyna Logo"></a>
+                <a id="logo" href="{% url 'market:market' %}"><span>AZYNA</span></a>
+            </div>
+            <ul class="menu">
+                <li><a href="{% url 'market:market' %}">Главная</a></li>
+                <li><a href="{% url 'main:index' %}">О нас</a></li>
+                <li><a href="{% url 'main:contact' %}">Контакты</a></li>
+                {% if request.user.is_authenticated %}
+                    <li class="logout"> {{user.first_name}} {{user.last_name}} | <a href="{% url 'login:logout' %}">Выйти</a></li>
+                {% else %}
+                    <li><a href="{% url 'login:login' %}">Вход</a></li>
+                {% endif %}
+            </ul>
+            <div class="social">
+                <a href="https://wa.me/7002446294"><img src="{% static 'main/img/whatsapp.png' %}" alt="WhatsApp"></a>
+                <a href="https://www.instagram.com/qazina_stroi/"><img src="{% static 'main/img/instagram.png' %}" alt="Instagram"></a>
+                <a href="https://t.me/Beibit_created_this_bot"><img src="{% static 'main/img/telegram.png' %}" alt="Telegram"></a>
+            </div>
+        </nav>
+    </header>
+</body>
+</html>

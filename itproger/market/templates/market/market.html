@@ -1,0 +1,19 @@
+{% extends 'main/layout.html'%}
+
+{% block title %}Market{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="market">
+        {% for el in market %}
+            <div class="market-item">
+                <img src="{{ el.image.url }}" alt="{{ el.title }}">
+                <h3>{{ el.title }}</h3>
+                <p>{{ el.content }}</p>
+                <div class="price">{{ el.price }} ₸</div>
+                <a href="{% url 'market:article_detail' el.id %}" class="buy-btn">Подробнее</a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

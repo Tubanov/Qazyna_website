@@ -1,0 +1,605 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: #1a2233;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    width: 70px;
+    height: auto;
+    margin-left: 100px;
+}
+
+.logo #logo {
+    font-family: josefin sans;
+    font-size: 60px;
+    text-decoration: none;
+    color: #f0f0f0;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+.logout {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.menu li {
+    margin-left: 10px;
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu li a:hover {
+    background-color: #f8b400;
+    color: #1a2233;
+}
+
+.menu li:hover {
+    transform: scale(1.1);
+}
+
+.social {
+    display: flex;
+    gap: 8px;
+}
+
+.social a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: #f8b400;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    transition: background-color 0.3s;
+}
+
+.social a:hover {
+    background-color: #d99000;
+    transform: scale(1.5);
+}
+
+.social img {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+/* Hero section */
+.hero {
+    background: url('/static/main/img/background_image.jpg') no-repeat center center/cover; /* Путь к вашему изображению */
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.hero-content {
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+/* Cards section */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background-color: rgba(51, 130, 209, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 250px;
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.card p {
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+.button {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    margin-top: auto;
+}
+
+/* Market section */
+.market {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.market-item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: calc(33.333% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.market-item:hover {
+    transform: translateY(-10px);
+}
+
+.market-item img {
+    max-width: 100%;
+    height: 500px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.market-item h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.market-item p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.market-item .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e60000;
+    margin-bottom: 15px;
+}
+
+.market-item .buy-btn {
+    background-color: #ff6600;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.market-item .buy-btn:hover {
+    background-color: #e55c00;
+}
+
+/* Стили для динамической страницы статьи */
+.dynamic-page {
+    max-width: 800px; /* Максимальная ширина контейнера */
+    margin: 40px auto; /* Центрирование страницы */
+    padding: 20px; /* Отступы */
+    background-color: white; /* Белый фон */
+    border-radius: 10px; /* Закругленные углы */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень */
+    text-align: center; /* Центрирование текста */
+}
+
+/* Стили для заголовка статьи */
+.dynamic-page h1 {
+    font-size: 2.5rem; /* Размер шрифта заголовка */
+    margin-bottom: 20px; /* Отступ снизу */
+    color: #333; /* Цвет заголовка */
+}
+
+/* Стили для изображения статьи */
+.dynamic-page img {
+    max-width: 100%; /* Максимальная ширина изображения */
+    height: auto; /* Автоматическая высота */
+    border-radius: 10px; /* Закругленные углы */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+/* Стили для текста статьи */
+.dynamic-page p {
+    white-space: pre-wrap;
+    font-size: 1.1rem; /* Размер шрифта для текста */
+    color: #666; /* Цвет текста */
+    line-height: 1.5; /* Высота строки */
+    margin-bottom: 15px; /* Отступ снизу */
+    text-align: left;
+}
+
+/* Стили для цены */
+.dynamic-page p.price {
+    font-weight: bold; /* Полужирный текст */
+    color: #e60000; /* Цвет для цены */
+    font-size: 1.5rem; /* Размер шрифта для цены */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+/* Стили для кнопок */
+.dynamic-page .buy-btn {
+    display: inline-block; /* Блочный элемент */
+    padding: 10px 20px; /* Отступы */
+    background-color: #007bff; /* Цвет фона кнопки */
+    color: white; /* Цвет текста кнопки */
+    text-decoration: none; /* Убираем подчеркивание */
+    border-radius: 5px; /* Закругленные углы */
+    transition: background-color 0.3s ease; /* Плавный переход цвета */
+    margin: 5px; /* Отступ между кнопками */
+}
+
+.dynamic-page .buy-btn:hover {
+    background-color: #0056b3; /* Цвет кнопки при наведении */
+}
+
+/* Footer */
+footer {
+    background-color: #1a2233;
+    padding: 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-logo img {
+    width: 70px;
+    height: auto;
+    margin-left: 100px;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.footer-column {
+    margin-left: 20px;
+}
+
+.footer-column h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 5px;
+}
+
+.footer-column ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+    color: #f8b400;
+}
+
+.footer-contact {
+    font-size: 0.9rem;
+}
+
+#copy-right {
+    background-color: #1a2233;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+#copy-right a {
+    color: #f8b400;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+#copy-right a:hover {
+    color: #d99000;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .market-item {
+        width: calc(50% - 20px);
+    }
+
+    .card {
+        width: 100%; /* Карточки занимают всю ширину на маленьких экранах */
+        height: auto; /* Высота карточек адаптируется */
+    }
+
+    .hero h1 {
+        font-size: 2.5rem; /* Уменьшение размера заголовка на меньших экранах */
+    }
+
+    .menu {
+        flex-direction: column; /* Вертикальное расположение элементов меню */
+    }
+
+    .logo img {
+        margin-left: 0; /* Убираем отступы для логотипа на маленьких экранах */
+    }
+}
+
+@media (max-width: 768px) {
+    .market-item {
+        width: 100%; /* Одна карточка в ряд на маленьких экранах */
+    }
+
+    .hero h1 {
+        font-size: 2rem; /* Уменьшение размера заголовка */
+    }
+
+    .menu li {
+        margin-left: 0; /* Убираем отступы для элементов меню на маленьких экранах */
+        margin-bottom: 10px; /* Добавляем отступ между элементами */
+    }
+
+    .social {
+        flex-direction: row; /* Горизонтальное расположение иконок социальных сетей */
+        justify-content: center; /* Центрируем иконки */
+    }
+
+    .footer-columns {
+        flex-direction: column; /* Вертикальное расположение колонок в футере */
+    }
+
+    .footer-column {
+        margin-left: 0; /* Убираем отступы для колонок футера */
+        margin-bottom: 20px; /* Отступ между колонками футера */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5rem; /* Уменьшение заголовка на очень маленьких экранах */
+    }
+
+    .footer-column h3 {
+        font-size: 0.9rem; /* Уменьшение размера заголовка футера */
+    }
+}
+
+/* Стили для контейнера формы */
+.login-container {
+    max-width: 400px; /* Максимальная ширина контейнера */
+    margin: 100px auto; /* Центрирование контейнера по вертикали и горизонтали */
+    padding: 20px; /* Внутренние отступы */
+    background-color: #ffffff; /* Цвет фона формы */
+    border-radius: 10px; /* Скругление углов */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень вокруг формы */
+}
+
+/* Стили заголовка */
+.login-container h2 {
+    text-align: center; /* Выравнивание по центру */
+    color: #1a2233; /* Цвет текста заголовка */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+/* Стили для группировки полей ввода */
+.form-group {
+    margin-bottom: 15px; /* Отступ снизу для каждой группы */
+}
+
+/* Стили для меток */
+.form-group label {
+    display: block; /* Блочный элемент */
+    margin-bottom: 5px; /* Отступ снизу */
+    color: #333; /* Цвет текста метки */
+}
+
+/* Стили для полей ввода */
+.form-group input {
+    width: 100%; /* Полная ширина */
+    padding: 10px; /* Внутренние отступы */
+    border: 1px solid #ccc; /* Цвет рамки */
+    border-radius: 5px; /* Скругление углов */
+    font-size: 1rem; /* Размер шрифта */
+    transition: border-color 0.3s; /* Плавный переход цвета рамки */
+}
+
+/* Стили при фокусе на полях ввода */
+.form-group input:focus {
+    border-color: #007bff; /* Цвет рамки при фокусе */
+    outline: none; /* Убираем обводку */
+}
+
+/* Стили для кнопки */
+.login-btn {
+    width: 100%; /* Полная ширина */
+    padding: 10px; /* Внутренние отступы */
+    background-color: #007bff; /* Цвет фона кнопки */
+    color: white; /* Цвет текста кнопки */
+    border: none; /* Убираем рамку */
+    border-radius: 5px; /* Скругление углов */
+    font-size: 1rem; /* Размер шрифта */
+    cursor: pointer; /* Указатель курсора при наведении */
+    transition: background-color 0.3s; /* Плавный переход цвета фона */
+}
+
+/* Стили для кнопки при наведении */
+.login-btn:hover {
+    background-color: #0056b3; /* Темнее при наведении */
+}
+
+/* Стили для сообщений об ошибках */
+.form-errors {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #ffcccc;
+    color: #cc0000;
+    border: 1px solid #cc0000;
+    border-radius: 5px;
+}
+
+.form-errors ul {
+    list-style: none;
+    padding: 0;
+}
+
+.form-errors li {
+    margin-bottom: 5px;
+}
+
+/* Основные стили для формы */
+.add {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    text-align: center;
+}
+
+.add h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Стили для формы */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Стили для полей ввода */
+form input[type="text"],
+form input[type="password"],
+form input[type="price"],
+form input[type="file"],
+form textarea,
+form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+form input[type="text"]:focus,
+form input[type="password"]:focus,
+form input[type="price"]:focus,
+form input[type="file"]:focus,
+form textarea:focus,
+form select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Стили для кнопки */
+form button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Отступы между полями формы */
+form p {
+    margin-bottom: 20px;
+    text-align: left;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Стили для меток формы */
+form label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}

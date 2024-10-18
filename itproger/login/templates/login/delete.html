@@ -1,0 +1,14 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}Удаление!{% endblock %}
+
+{% block content %}
+<div class="add">
+        <h1>Form</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <button type="submit">Удалить</button>
+        </form>
+    </div>
+{% endblock %}

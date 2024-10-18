@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+    <html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Qazyna Footer</title>
+        <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    </head>
+
+    <body>
+        <footer>
+            <div class="footer-logo">
+               <a href="{% url 'market:market' %}"><img src="{% static 'main/img/Qazyna.png' %}" alt="Qazyna Logo"></a>
+            </div>
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>Полезные ссылки</h3>
+                    <ul>
+                        <li><a href="{% url 'market:market' %}">Главная</a></li>
+                        <li><a href="{% url 'main:index' %}">О нас</a></li>
+                        <li><a href="{% url 'main:contact' %}">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Социальные сети</h3>
+                    <ul>
+                        <li><a href="https://wa.me/7002446294">WhatsApp</a></li>
+                        <li><a href="https://www.instagram.com/qazina_stroi/">Instagram</a></li>
+                        <li><a href="https://t.me/q1w2eer">Telegram</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column footer-contact">
+                    <h3>Контакты</h3>
+                    <p>г. Тараз, Казахстан, проспект Жамбыла 87</p>
+                    <p>+7 707 307 1994</p>
+                    <p>info@qazyna.kz</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- footer copy right section start -->
+        <section id="copy-right">
+            <div><i class="fa fa-copyright"></i> Qazyna 2024 | Все права защищены | Разработано <a href="https://www.instagram.com/_beybit__/">Beibit Tubanov</a></div>
+        </section>
+        <!-- footer copy right section end -->
+
+        <!-- Font Awesome для иконок -->
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    </body>
+</html>
